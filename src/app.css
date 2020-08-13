@@ -230,7 +230,7 @@ h1 {
 }
 
 h2 {
-  font-size: 40px;
+  font-size: 35px;
 }
 
 h1,
@@ -299,7 +299,6 @@ header p {
 .checkList {
   border: 4px solid var(--black);
   border-radius: 10px;
-  margin-top: 40px;
   margin-bottom: 40px;
   padding: 20px;
 }
@@ -317,6 +316,7 @@ header p {
 .topSection {
   display: flex;
   justify-content: space-between;
+  margin-top: 30px;
 }
 
 .checkList {
@@ -363,7 +363,7 @@ li span {
 }
 
 .motivation button {
-  margin-bottom: 20px;
+  margin: 20px 0 30px 0;
 }
 
 .motivationImage {
@@ -381,4 +381,36 @@ footer {
   padding: 10px;
   background-color: var(--turquoise);
   border-top: 4px solid var(--black);
+}
+
+/* Media Queries */
+
+@media (max-width: 920px) {
+  .topSection {
+    flex-direction: column-reverse;
+  }
+
+  .callToDoList {
+    box-shadow: 20px 20px 0 var(--turquoise);
+  }
+
+  .errandToDoList {
+    box-shadow: 20px 20px 0 var(--pink);
+  }
+}
+
+@media (max-width: 550px) {
+  h1 {
+    font-size: 50px;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+  body,
+  input,
+  li {
+    font-size: 18px;
+  }
 }

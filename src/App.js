@@ -47,8 +47,8 @@ class App extends Component {
             <div className="topSection">
               <ToDoList
                 className="callToDoList"
-                listHeader="People I need to call reluctantly:"
-                placeHolder="Type in someone to call"
+                listHeader="People I need to contact, reluctantly:"
+                placeHolder="Type in someone"
                 inputId="call"
               />
               <div className="checkList">
