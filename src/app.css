@@ -248,7 +248,7 @@ button {
 p,
 input,
 li {
-  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-family: "Comic Sans MS", "Comic Sans", "Sniglet", cursive;
 }
 
 h1,
@@ -280,7 +280,6 @@ button:hover {
   border: 4px solid var(--pink);
   background-color: var(--pink);
   color: white;
-  /* var(--turquoise); */
 }
 
 /* Header */
@@ -308,7 +307,7 @@ header p {
   flex-basis: 50%;
 }
 
-.callToDoList {
+.contactToDoList {
   box-shadow: 20px 20px 0 var(--pink);
   flex-basis: 50%;
 }
@@ -347,11 +346,27 @@ form input {
 }
 li {
   padding: 10px 0;
+  cursor: pointer;
 }
 
 li span {
   padding-right: 5px;
   font-size: 30px;
+}
+
+.clear {
+  padding: 5px;
+  border-radius: 15px;
+  border: 4px solid transparent;
+  width: max-content;
+}
+
+.clear:hover {
+  padding: 5px;
+  border-radius: 15px;
+  border: 4px solid var(--pink);
+  background-color: var(--pink);
+  color: white;
 }
 
 /* motivation */
@@ -390,7 +405,7 @@ footer {
     flex-direction: column-reverse;
   }
 
-  .callToDoList {
+  .contactToDoList {
     box-shadow: 20px 20px 0 var(--turquoise);
   }
 
@@ -400,6 +415,14 @@ footer {
 }
 
 @media (max-width: 550px) {
+  button {
+    border: 2px solid var(--pink);
+  }
+
+  form input {
+    border: 2px solid var(--black);
+  }
+
   h1 {
     font-size: 50px;
   }

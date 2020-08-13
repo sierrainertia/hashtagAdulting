@@ -34,7 +34,10 @@ class App extends Component {
         <header>
           <div className="wrapper">
             <h1>Hashtag Adulting</h1>
-            <p>Use this app to record all your tedius adult tasks.</p>
+            <p>
+              Use this app to record all your tedius adult tasks. Click the "I
+              need motivation" to get some motivation!
+            </p>
             <p>
               <span className="remember">Remember: </span>The best time to do
               something you don't want to do is yesterday.
@@ -43,14 +46,16 @@ class App extends Component {
         </header>
         <main>
           <div className="wrapper">
-            {/* To do list sections */}
+            {/* Top Section */}
             <div className="topSection">
+              {/* contact to do list section */}
               <ToDoList
-                className="callToDoList"
+                className="contactToDoList"
                 listHeader="People I need to contact, reluctantly:"
                 placeHolder="Type in someone"
-                inputId="call"
+                inputId="contact"
               />
+              {/* daily checklist section */}
               <div className="checkList">
                 <h2>Daily CheckList:</h2>
                 <ul>
@@ -62,6 +67,7 @@ class App extends Component {
                 </ul>
               </div>
             </div>
+            {/* errand to do list */}
             <ToDoList
               className="errandToDoList"
               listHeader="Errands I cannot ignore anymore:"

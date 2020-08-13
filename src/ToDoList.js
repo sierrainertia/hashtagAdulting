@@ -23,14 +23,19 @@ class ToDoList extends Component {
   handleClick = (event) => {
     //prevent page from refreshing
     event.preventDefault();
+    if (this.state.userInput === "") {
+      alert(
+        "Please type something! We know there are plenty of tasks you have been avoiding 👀"
+      );
+    } else {
+      const dbRef = this.state.list;
+      dbRef.push(this.state.userInput);
 
-    const dbRef = this.state.list;
-    dbRef.push(this.state.userInput);
-
-    // Set state to with new list value(s)
-    this.setState({
-      userInput: "",
-    });
+      // Set state to with new list value(s)
+      this.setState({
+        userInput: "",
+      });
+    }
   };
 
   render() {
@@ -41,6 +46,7 @@ class ToDoList extends Component {
         to list on submit */}
         <form onSubmit={this.addItem}>
           <label for={this.props.inputId} className="visuallyhidden"></label>
+
           <input
             id={this.props.inputId}
             type="text"
@@ -48,7 +54,9 @@ class ToDoList extends Component {
             aria-label={this.props.placeHolder}
             value={this.state.userInput}
             onChange={this.handleChange}
+            required
           ></input>
+
           <button onClick={this.handleClick}>Add Task!</button>
         </form>
         <ul>
@@ -57,6 +65,9 @@ class ToDoList extends Component {
             return <ListItem key={index} listItemText={listItem} />;
           })}
         </ul>
+        <div className="clear">
+          <p>clear list</p>
+        </div>
       </section>
     );
   }
