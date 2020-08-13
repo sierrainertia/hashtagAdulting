@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import ToDoList from "./ToDoList";
 import "./app.css";
 import axios from "axios";
+import ListItem from "./ListItem";
 class App extends Component {
   constructor() {
     super();
@@ -43,20 +44,30 @@ class App extends Component {
         <main>
           <div className="wrapper">
             {/* To do list sections */}
-            <div className="toDoListSections">
-              <ToDoList
-                className="errandToDoList"
-                listHeader="Errands I cannot ignore anymore:"
-                placeHolder="Type in an errand"
-                inputId="errand"
-              />
+            <div className="topSection">
               <ToDoList
                 className="callToDoList"
-                listHeader="People I need to call reluctantly"
+                listHeader="People I need to call reluctantly:"
                 placeHolder="Type in someone to call"
                 inputId="call"
               />
+              <div className="checkList">
+                <h2>Daily CheckList:</h2>
+                <ul>
+                  <ListItem listItemText="Showered" />
+                  <ListItem listItemText="Took vitamins (gummies count)" />
+                  <ListItem listItemText="Ate a vegetable" />
+                  <ListItem listItemText="Didn't set anything on fire" />
+                  <ListItem listItemText="Didn't eat cereal for dinner" />
+                </ul>
+              </div>
             </div>
+            <ToDoList
+              className="errandToDoList"
+              listHeader="Errands I cannot ignore anymore:"
+              placeHolder="Type in an errand"
+              inputId="errand"
+            />
 
             {/* Motivation giphy section */}
             <section className="motivation">

@@ -202,7 +202,7 @@ textarea {
 }
 /* General styles */
 .wrapper {
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
   width: 90%;
 }
@@ -295,7 +295,8 @@ header p {
 
 /* main */
 /* to do list */
-.toDoList {
+.toDoList,
+.checkList {
   border: 4px solid var(--black);
   border-radius: 10px;
   margin-top: 40px;
@@ -304,19 +305,34 @@ header p {
 }
 
 .errandToDoList {
-  box-shadow: 20px 20px 0 var(--pink);
-  margin-right: 50px;
-  flex-basis: 50%;
-}
-
-.callToDoList {
   box-shadow: 20px 20px 0 var(--turquoise);
   flex-basis: 50%;
 }
 
-.toDoListSections {
+.callToDoList {
+  box-shadow: 20px 20px 0 var(--pink);
+  flex-basis: 50%;
+}
+
+.topSection {
   display: flex;
   justify-content: space-between;
+}
+
+.checkList {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 20px 20px 0 var(--pink);
+}
+.checkList ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.checkList li {
+  padding-bottom: 10px;
 }
 h2 {
   padding-bottom: 20px;
@@ -330,7 +346,7 @@ form input {
   margin-bottom: 10px;
 }
 li {
-  padding-bottom: 5px;
+  padding: 10px 0;
 }
 
 li span {
