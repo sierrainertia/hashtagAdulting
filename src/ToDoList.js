@@ -1,4 +1,5 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
+import ListItem from "./ListItem";
 
 class ToDoList extends Component {
   // use constructor to define state and create empty array list
@@ -34,14 +35,17 @@ class ToDoList extends Component {
 
   render() {
     return (
-      <Fragment>
+      <section className={`toDoList ${this.props.className}`}>
+        <h2>{this.props.listHeader}</h2>
         {/* // create form for user to add tasks // use .addItem method to add item
         to list on submit */}
         <form onSubmit={this.addItem}>
+          <label for={this.props.inputId} className="visuallyhidden"></label>
           <input
+            id={this.props.inputId}
             type="text"
-            placeholder="Type in an errand"
-            aria-label="Type in an errand"
+            placeholder={this.props.placeHolder}
+            aria-label={this.props.placeHolder}
             value={this.state.userInput}
             onChange={this.handleChange}
           ></input>
@@ -50,15 +54,10 @@ class ToDoList extends Component {
         <ul>
           {/* maping through state to render list items */}
           {this.state.list.map((listItem, index) => {
-            return (
-              <li key={index}>
-                <span class="fa fa-square-o"></span>
-                {listItem}
-              </li>
-            );
+            return <ListItem key={index} listItemText={listItem} />;
           })}
         </ul>
-      </Fragment>
+      </section>
     );
   }
 }

@@ -301,9 +301,23 @@ header p {
   margin-top: 40px;
   margin-bottom: 40px;
   padding: 20px;
-  box-shadow: 20px 20px 0 var(--pink);
 }
 
+.errandToDoList {
+  box-shadow: 20px 20px 0 var(--pink);
+  margin-right: 50px;
+  flex-basis: 50%;
+}
+
+.callToDoList {
+  box-shadow: 20px 20px 0 var(--turquoise);
+  flex-basis: 50%;
+}
+
+.toDoListSections {
+  display: flex;
+  justify-content: space-between;
+}
 h2 {
   padding-bottom: 20px;
 }

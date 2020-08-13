@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ToDoList from "./ToDoList";
-import "./styles.css";
+import "./app.css";
 import axios from "axios";
 class App extends Component {
   constructor() {
@@ -35,17 +35,30 @@ class App extends Component {
             <h1>Hashtag Adulting</h1>
             <p>Use this app to record all your tedius adult tasks.</p>
             <p>
-              <span class="remember">Remember: </span>The best time to do
+              <span className="remember">Remember: </span>The best time to do
               something you don't want to do is yesterday.
             </p>
           </div>
         </header>
         <main>
           <div className="wrapper">
-            <section className="toDoList">
-              <h2>Errands I can't ignore anymore:</h2>
-              <ToDoList />
-            </section>
+            {/* To do list sections */}
+            <div className="toDoListSections">
+              <ToDoList
+                className="errandToDoList"
+                listHeader="Errands I cannot ignore anymore:"
+                placeHolder="Type in an errand"
+                inputId="errand"
+              />
+              <ToDoList
+                className="callToDoList"
+                listHeader="People I need to call reluctantly"
+                placeHolder="Type in someone to call"
+                inputId="call"
+              />
+            </div>
+
+            {/* Motivation giphy section */}
             <section className="motivation">
               <button onClick={this.getGiphyImage}>
                 I need some motivation!
