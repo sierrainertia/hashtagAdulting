@@ -226,6 +226,11 @@ main {
   flex: 1;
 }
 
+label,
+.fa {
+  cursor: pointer;
+}
+
 /******************Typography********************/
 h1 {
   font-size: 70px;
@@ -353,7 +358,6 @@ form input:focus-within {
 /*******Li style (list styles)******* */
 li {
   padding: 10px 0;
-  cursor: pointer;
 }
 
 .checkList li {

@@ -25,17 +25,17 @@ class ListItem extends Component {
       checkBoxClassName = "fa fa-square-o";
     }
     return (
-      <li onClick={this.handleClick}>
-        <span className={checkBoxClassName}></span>
-
+      <li>
+        <span onClick={this.handleClick} className={checkBoxClassName}></span>
         <input
           type="checkbox"
           id={this.props.id}
           checked={this.state.checked}
           className="visuallyHidden"
+          onChange={this.handleClick}
         />
 
-        <label for={this.props.id}>{this.props.listItemText}</label>
+        <label htmlFor={this.props.id}>{this.props.listItemText}</label>
       </li>
     );
   }

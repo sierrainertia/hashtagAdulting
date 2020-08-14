@@ -50,7 +50,10 @@ class ToDoList extends Component {
         {/* // create form for user to add tasks // use .addItem method to add item
         to list on submit */}
         <form onSubmit={this.addItem}>
-          <label for={this.props.inputId} className="visuallyhidden"></label>
+          <label
+            htmlFor={this.props.inputId}
+            className="visuallyhidden"
+          ></label>
 
           <input
             id={this.props.inputId}
@@ -69,7 +72,13 @@ class ToDoList extends Component {
         <ul>
           {/* maping through state to render list items */}
           {this.state.list.map((listItem, index) => {
-            return <ListItem id={index} key={index} listItemText={listItem} />;
+            return (
+              <ListItem
+                id={listItem + index}
+                key={index}
+                listItemText={listItem}
+              />
+            );
           })}
         </ul>
         <div>

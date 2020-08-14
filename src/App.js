@@ -20,11 +20,19 @@ class App extends Component {
         "https://api.giphy.com/v1/gifs/random?api_key=KMdcSvJCsU4GSHGjdYnTVOfeQkyqAIJ9&tag=motivational&rating=pg",
       dataResponse: "json",
     }).then((response) => {
-      console.log(response);
       this.setState({
         imageUrl: response.data.data.image_url,
         title: response.data.data.title,
       });
+      // wait so image has a chance to load
+      setTimeout(() => {
+        // got this from https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollTo
+        // scroll to bottom of page when giphy appears to see full image on screen
+        window.scrollTo({
+          top: document.body.scrollHeight,
+          behavior: "smooth",
+        });
+      }, 50);
     });
   };
 
@@ -59,11 +67,20 @@ class App extends Component {
               <div className="checkList">
                 <h2>Daily CheckList:</h2>
                 <ul>
-                  <ListItem listItemText="Showered" />
-                  <ListItem listItemText="Took vitamins (gummies count)" />
-                  <ListItem listItemText="Ate a vegetable" />
-                  <ListItem listItemText="Didn't set anything on fire" />
-                  <ListItem listItemText="Didn't eat cereal for dinner" />
+                  <ListItem id="item1" listItemText="Showered" />
+                  <ListItem
+                    id="item2"
+                    listItemText="Took vitamins (gummies count)"
+                  />
+                  <ListItem id="item3" listItemText="Ate a vegetable" />
+                  <ListItem
+                    id="item4"
+                    listItemText="Didn't set anything on fire"
+                  />
+                  <ListItem
+                    id="item5"
+                    listItemText="Didn't eat cereal for dinner"
+                  />
                 </ul>
               </div>
             </div>
