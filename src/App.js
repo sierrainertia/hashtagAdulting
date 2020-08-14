@@ -26,7 +26,7 @@ class App extends Component {
       });
       // wait so image has a chance to load
       setTimeout(() => {
-        // got this from https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollTo
+        // got this from: https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollTo
         // scroll to bottom of page when giphy appears to see full image on screen
         window.scrollTo({
           top: document.body.scrollHeight,
