@@ -38,6 +38,11 @@ class ToDoList extends Component {
     }
   };
 
+  // add clear list functionality
+  removeListItems = (event) => {
+    this.setState({ list: [] });
+  };
+
   render() {
     return (
       <section className={`toDoList ${this.props.className}`}>
@@ -57,16 +62,20 @@ class ToDoList extends Component {
             required
           ></input>
 
-          <button onClick={this.handleClick}>Add Task!</button>
+          <button className="mainButton" onClick={this.handleClick}>
+            Add Task!
+          </button>
         </form>
         <ul>
           {/* maping through state to render list items */}
           {this.state.list.map((listItem, index) => {
-            return <ListItem key={index} listItemText={listItem} />;
+            return <ListItem id={index} key={index} listItemText={listItem} />;
           })}
         </ul>
-        <div className="clear">
-          <p>clear list</p>
+        <div>
+          <button className="clear" onClick={this.removeListItems}>
+            clear list
+          </button>
         </div>
       </section>
     );

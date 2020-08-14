@@ -27,7 +27,15 @@ class ListItem extends Component {
     return (
       <li onClick={this.handleClick}>
         <span className={checkBoxClassName}></span>
-        {this.props.listItemText}
+
+        <input
+          type="checkbox"
+          id={this.props.id}
+          checked={this.state.checked}
+          className="visuallyHidden"
+        />
+
+        <label for={this.props.id}>{this.props.listItemText}</label>
       </li>
     );
   }

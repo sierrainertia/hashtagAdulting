@@ -77,7 +77,7 @@ class App extends Component {
 
             {/* Motivation giphy section */}
             <section className="motivation">
-              <button onClick={this.getGiphyImage}>
+              <button onClick={this.getGiphyImage} className="mainButton">
                 I need some motivation!
               </button>
               <div className="motivationImage">
