@@ -43,7 +43,7 @@ class App extends Component {
           <div className="wrapper">
             <h1>Hashtag Adulting</h1>
             <p>
-              Use this app to record all your tedius adult tasks. Click the "I
+              Use this app to record all your tedious adult tasks. Click the "I
               need motivation" to get some motivation!
             </p>
             <p>
